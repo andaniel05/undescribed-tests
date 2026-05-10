@@ -1,5 +1,6 @@
 {
     "name": "andaniel05/undescribed-tests",
+    "description": "Allow the creation of tests with Pest omitting the description",
     "autoload": {
         "psr-4": {
             "Andaniel05\\UndescribedTests\\": "src/"

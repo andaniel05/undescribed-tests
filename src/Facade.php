@@ -10,7 +10,11 @@ use ReflectionFunction;
 
 abstract class Facade
 {
-    public static function test(string|Closure|null $description = null, ?Closure $closure = null): HigherOrderTapProxy|TestCall
+    public static function test(
+        string|Closure|null $description = null,
+        ?Closure $closure = null,
+        ?string $undescribedGroupName = 'undescribed',
+    ): HigherOrderTapProxy|TestCall
     {
         $blankDescription = null;
 
@@ -39,6 +43,12 @@ abstract class Facade
             $description = $relativeFilename.':'.$reflectionFunction->getStartLine();
         }
 
-        return test($description, $closure);
+        $test = test($description, $closure);
+
+        if ($blankDescription && $undescribedGroupName) {
+            $test->group($undescribedGroupName);
+        }
+
+        return $test;
     }
 }
