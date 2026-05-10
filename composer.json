@@ -1,8 +1,13 @@
 {
-    "name": "andaniel05/unnamed-tests",
+    "name": "andaniel05/undescribed-tests",
     "autoload": {
         "psr-4": {
-            "Andaniel05\\UnnamedTests\\": "src/"
+            "Andaniel05\\UndescribedTests\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "authors": [
@@ -11,5 +16,12 @@
             "email": "andaniel05@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "pestphp/pest": "^4.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
