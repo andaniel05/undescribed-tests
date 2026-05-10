@@ -68,6 +68,8 @@ _test(function () {
 });
 ```
 
+>The package [andaniel05/test-function](https://github.com/andaniel05/test-function) contains an installable `_test` wrapper.
+
 ### Groups
 
 When the description is omitted, the test is automatically assigned to the `undescribed` group (or any other you specify). This allows easy filtering of tests without explicit description:
