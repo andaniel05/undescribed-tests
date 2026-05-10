@@ -49,6 +49,25 @@ Facade::test('my described test', function () {
 });
 ```
 
+### Recommended approach: create a custom wrapper (ideal)
+
+Instead of calling `Facade::test()` directly throughout your tests, create a wrapper function in your `tests/Pest.php`:
+
+```php
+function _test(string|Closure|null $description = null, ?Closure $closure = null): HigherOrderTapProxy|TestCall
+{
+    return Facade::test($description, $closure);
+}
+```
+
+Then use it in your test files:
+
+```php
+_test(function () {
+    expect(true)->toBe(true);
+});
+```
+
 ### Groups
 
 When the description is omitted, the test is automatically assigned to the `undescribed` group (or any other you specify). This allows easy filtering of tests without explicit description:

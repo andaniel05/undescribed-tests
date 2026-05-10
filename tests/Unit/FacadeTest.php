@@ -21,3 +21,7 @@ Facade::test('', function () {
 Facade::test('described test', function () {
     expect(true)->toBe(true);
 });
+
+_test(function () {
+    expect(true)->toBe(true);
+});
